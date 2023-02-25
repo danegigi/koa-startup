@@ -4,6 +4,11 @@
     "esModuleInterop": true,
     "target": "es2017",
     "sourceMap": true,
+    "downlevelIteration": true,
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
     "outDir": "./dist",
     "baseUrl": "/",
     "paths": {
