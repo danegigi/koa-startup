@@ -6,7 +6,7 @@ import { catchAll } from "./middlewares/error"
 // import jwt from "koa-jwt"
 
 import { router } from "./router"
-import { PORT, JWT_SECRET } from "./config/main"
+import { PORT } from "./config/main"
 
 const app = new Koa()
 // open routes

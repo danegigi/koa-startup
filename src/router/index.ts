@@ -9,11 +9,14 @@ export const router: Router = new Router({
   prefix: BASE_ROUTE_PREFIX
 })
 
-const pub = router.prefix("/public")
-pub.get("/knowledgebase", ctx => ctx.body = "Knowlege is Power")
-pub.get("/careers", ctx => ctx.body = "Jobs")
-
 router.get("/", HomeHandler)
 router.get("/about-us", AboutHandler)
 router.get("/contact-us", ContactHandler)
 router.put("/fulfillment/:id", FulfillmentHandler)
+
+const pub = new Router()
+pub.get("/knowledgebase", ctx => ctx.body = "Knowlege is Power")
+pub.get("/careers", ctx => ctx.body = "Jobs")
+pub.del("careers", ctx => ctx.body = "Jobs")
+
+router.use("/public", pub.routes(), pub.allowedMethods())
