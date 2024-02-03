@@ -1,0 +1,33 @@
+{
+  "name": "koa",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot ./src/main.ts",
+    "cleanup": "rm -rf ./dist",
+    "convert": "bun build --target=node ./src/* --outdir=./dist/",
+    "start": "bun cleanup && bun convert && bun run dist/main.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/koa": "^2.14.0",
+    "@types/koa-bodyparser": "^4.3.12",
+    "@types/koa-json": "^2.0.23",
+    "@types/koa-jwt": "^3.3.0",
+    "@types/koa-logger": "^3.1.5",
+    "@types/koa-router": "^7.4.8",
+    "@types/koa__cors": "^5.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "koa": "^2.15.0",
+    "koa-bodyparser": "^4.4.1",
+    "koa-json": "^2.0.2",
+    "koa-jwt": "^4.0.4",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^12.0.1"
+  }
+}
